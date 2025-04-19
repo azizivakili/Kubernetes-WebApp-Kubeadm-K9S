@@ -102,7 +102,29 @@ azizi-k8s-project$ tree
 * Dockerfile [here](webapi/Dockerfile)
 * init.sql [here](db-init/init.sql)
 
+## Build and Push Webapi Docker image
+```
+docker build -t azizivakili/k8swebapi:latest .
+```
+login to the docker hub to push the built image: 
+```
+docker login
+```
+Push to Docker Hub:
+```
+docker push  azizivakili/k8swebapi:latest
+```
 
+## Apply and deploy
+```
+kubectl apply -f k8s/secret.yaml
+kubectl apply -f k8s/db-init-config.yaml
+kubectl apply -f k8s/db-deployment-service.yaml
+kubectl apply -f k8s/weapi-deployment-service.yaml
+kubectl apply -f k8s/ingress.yaml
+ ```
+Check if deployments and pods are running:
+![](k8s-running.png)
 
 # Nice Commands
 
