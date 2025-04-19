@@ -126,6 +126,19 @@ kubectl apply -f k8s/ingress.yaml
 Check if deployments and pods are running:
 ![](k8s-running.png)
 
+By using ingress local, We can access our web app now from:
+```
+http://webapi.local
+```
+or can use protforwaring:
+```
+kubectl port-forward service/webapi-service 5000:80
+```
+We can also set the portforwaring via K9S (press Shift+F  in k9s!)
+
+## Finally, webapp!
+![](webapi.png)
+
 # Nice Commands
 
 kubectl logs pod/webapi-deployment-58d4cfb8f7-lgp88
