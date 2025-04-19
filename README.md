@@ -89,14 +89,18 @@ azizi-k8s-project$ tree
 │   ├── secret.yaml                              # Secret for PostgreSQL username and password
 │   ├── db-init-config.yaml                      # ConfigMap with init.sql content to bootstrap the database
 │   ├── db-deployment-service.yaml               # Combined Deployment and Service for the PostgreSQL database
-│   ├── api-deployment-service.yaml              # Combined Deployment and Service for the Web API
+│   ├── webapi-deployment-service.yaml           # Combined Deployment and Service for the Web API
 │   └── ingress.yaml                             # Ingress to expose the Web API via HTTP
 ```
 Here are files:
-* mongo-config.yaml [here](mongo-config.yaml)
-* mongo.yaml [here](mongo.yaml)
-* webapp.yaml [here](webapp.yaml)
-* mongo-secret.yaml [here](mongo-secret.yaml)
+* k8s/db-deployment-service.yaml [here](k8s/db-deployment-service.yaml)
+* k8s/webapi-deployment-service.yaml [here](k8s/webapi-deployment-service.yaml)
+* k8s/secret.yaml [here](secret.yaml)
+* k8s/db-init-config.yaml [here](k8s/db-init-config.yaml)
+* k8s/ingress.yaml [here](k8s/ingress.yaml)
+* webapi/app.py [here](webapi/app.py)
+* webapi/Dockerfile [here](webapi/Dockerfile)
+* db-init/init.sql [here](db-init/init.sql)
 
 
 
