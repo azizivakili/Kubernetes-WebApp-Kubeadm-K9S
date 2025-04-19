@@ -93,14 +93,14 @@ azizi-k8s-project$ tree
 │   └── ingress.yaml                             # Ingress to expose the Web API via HTTP
 ```
 Here are files:
-* k8s/db-deployment-service.yaml [here](k8s/db-deployment-service.yaml)
-* k8s/webapi-deployment-service.yaml [here](k8s/webapi-deployment-service.yaml)
-* k8s/secret.yaml [here](secret.yaml)
-* k8s/db-init-config.yaml [here](k8s/db-init-config.yaml)
-* k8s/ingress.yaml [here](k8s/ingress.yaml)
-* webapi/app.py [here](webapi/app.py)
-* webapi/Dockerfile [here](webapi/Dockerfile)
-* db-init/init.sql [here](db-init/init.sql)
+* db-deployment-service.yaml [here](k8s/db-deployment-service.yaml)
+* webapi-deployment-service.yaml [here](k8s/webapi-deployment-service.yaml)
+* secret.yaml [here](secret.yaml)
+* db-init-config.yaml [here](k8s/db-init-config.yaml)
+* ingress.yaml [here](k8s/ingress.yaml)
+* app.py [here](webapi/app.py)
+* Dockerfile [here](webapi/Dockerfile)
+* init.sql [here](db-init/init.sql)
 
 
 
