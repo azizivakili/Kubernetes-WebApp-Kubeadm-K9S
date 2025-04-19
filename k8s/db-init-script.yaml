@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-init-script
+data:
+  init.sql: |
+    CREATE TABLE azizik8stable (
+      id SERIAL PRIMARY KEY,
+      name TEXT
+    );

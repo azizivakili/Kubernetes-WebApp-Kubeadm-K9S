@@ -1,0 +1,13 @@
+# k8s/db-init-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-init-config
+data:
+  init.sql: |
+    CREATE DATABASE azizik89db;
+    \connect azizik89db;
+    CREATE TABLE azizik8stable (
+        id SERIAL PRIMARY KEY,
+        name TEXT
+    );
