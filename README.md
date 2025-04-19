@@ -139,16 +139,9 @@ We can also set the portforwaring via K9S (press Shift+F  in k9s!)
 ## Finally, webapp!
 ![](webapi.png)
 
-# Nice Commands
-
-kubectl logs pod/webapi-deployment-58d4cfb8f7-lgp88
-
-kubectl describe pod webapi-deployment-58d4cfb8f7-lgp88
+**Congratulations!**
 
 
-# Troubleshooting
-If docker error for permission: 
-sudo usermod -aG docker $USER    
 
 
 
