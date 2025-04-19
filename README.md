@@ -92,7 +92,7 @@ azizi-k8s-project$ tree
 │   ├── webapi-deployment-service.yaml           # Combined Deployment and Service for the Web API
 │   └── ingress.yaml                             # Ingress to expose the Web API via HTTP
 ```
-Here are files:
+**Here are files:**
 * db-deployment-service.yaml [here](k8s/db-deployment-service.yaml)
 * webapi-deployment-service.yaml [here](k8s/webapi-deployment-service.yaml)
 * secret.yaml [here](secret.yaml)
