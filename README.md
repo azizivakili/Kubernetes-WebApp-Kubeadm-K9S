@@ -47,7 +47,7 @@ sudo sysctl --system
 ```
 
 #### Install kubeadm, kubelet, kubectl
-Note: Based of Kubernetes fomal website, these instructions are for Kubernetes v1.32.
+Note: Based of Kubernetes formal website, these instructions are for Kubernetes v1.32.
 
 ```
 sudo apt-get update
