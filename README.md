@@ -69,6 +69,12 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 Note: If problem with kubectl installation, then try [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) to install. 
+You may need to Set Up Kubectl for your User:
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 
 ### Install K9S:
 K9S is a greate kubenetes management tool which can follow [k9s](https://dev.to/dm8ry/how-to-install-k9s-on-ubuntu-a-step-by-step-guide-2f98) to install it. 
