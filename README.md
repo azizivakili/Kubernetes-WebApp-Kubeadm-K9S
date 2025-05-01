@@ -75,19 +75,19 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
-#### Initialize the control plane (on master node)
+##### Initialize the control plane (on master node)
 ```
 sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 ```
-### Install a CNI plugin
+#### Install a CNI plugin
 ```
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
 ```
-### If you run both Master and Workder run in same machine then run:
+#### If you run both Master and Workder run in same machine then run:
 ```
 kubectl taint nodes $(hostname) node-role.kubernetes.io/control-plane-
 ```
-### If your Worker is running in a separate machine, join it to master:
+#### If your Worker is running in a separate machine, join it to master:
 Run this command on each worker node after setting up kubeadm, kubelet, and disabling swap.
 ```
 kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
