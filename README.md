@@ -75,6 +75,32 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
+#### Initialize the control plane (on master node)
+```
+sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+```
+### Install a CNI plugin
+```
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
+```
+### If you run both Master and Workder run in same machine then run:
+```
+kubectl taint nodes $(hostname) node-role.kubernetes.io/control-plane-
+```
+### If your Woeker is running in a separate machine, join it to master:
+Run this command on each worker node after setting up kubeadm, kubelet, and disabling swap.
+```
+kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
+If you need that command, you can regenerate it on master node:
+```
+kubeadm token create --print-join-command
+```
+For example: 
+```
+azizi-k8s-project$ kubeadm token create --print-join-command
+kubeadm join 192.168.178.38:6443 --token gxg4bj.afeo9sx9fokjcf1o --discovery-token-ca-cert-hash sha256:4859fcdf0378f2b960646a610736a3197b975be8fc5a885817dff29ad1fd2586
+```
 
 ### Install K9S:
 K9S is a greate kubenetes management tool which can follow [k9s](https://dev.to/dm8ry/how-to-install-k9s-on-ubuntu-a-step-by-step-guide-2f98) to install it. 
