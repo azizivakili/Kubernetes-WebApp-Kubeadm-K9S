@@ -83,7 +83,7 @@ sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 ```
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
 ```
-#### If you run both Master and Workder run in same machine then run:
+#### If you run both Master and Worker run in same machine then run:
 ```
 kubectl taint nodes $(hostname) node-role.kubernetes.io/control-plane-
 ```
