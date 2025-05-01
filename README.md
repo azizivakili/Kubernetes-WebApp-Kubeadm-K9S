@@ -87,12 +87,12 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/
 ```
 kubectl taint nodes $(hostname) node-role.kubernetes.io/control-plane-
 ```
-### If your Woeker is running in a separate machine, join it to master:
+### If your Worker is running in a separate machine, join it to master:
 Run this command on each worker node after setting up kubeadm, kubelet, and disabling swap.
 ```
 kubeadm join <master-ip>:6443 --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
-If you need that command, you can regenerate it on master node:
+You can regenerate it on master node:
 ```
 kubeadm token create --print-join-command
 ```
